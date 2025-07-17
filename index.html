@@ -55,7 +55,29 @@
       color: white;
       margin-top: 40px;
     }
+    .video {
+      margin: 30px 0;
+      text-align: center;
+    }
+    .video iframe {
+      width: 100%;
+      max-width: 720px;
+      height: 405px;
+      border: none;
+    }
+    .hidden {
+      display: none;
+    }
   </style>
+  <script>
+    function mostrarBotao() {
+      document.getElementById('botaoCompra').classList.remove('hidden');
+    }
+    // Espera o tempo de duração do vídeo (86s) para mostrar o botão
+    window.onload = function () {
+      setTimeout(mostrarBotao, 86000);
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -64,6 +86,11 @@
   </header>
 
   <div class="container">
+    <div class="video">
+      <h2>Assista ao vídeo e entenda por que esse guia é diferente</h2>
+      <iframe src="https://www.youtube.com/embed/IVb4-JHQYno?rel=0" title="Vídeo de Divulgação" allowfullscreen></iframe>
+    </div>
+
     <h2>Descubra Técnicas Pouco Conhecidas para Resultados Visíveis</h2>
     <p>Chega de estagnação nos treinos! Aprenda estratégias avançadas, como usar o sono, alimentação e suplementação da forma correta para crescer de verdade.</p>
     <ul>
@@ -72,7 +99,9 @@
       <li>✔️ O papel do sono e estresse na hipertrofia</li>
       <li>✔️ Plano prático para sair do zero aos ganhos reais</li>
     </ul>
-    <a href="https://pay.kiwify.com.br/61zfzdm" class="btn" target="_blank">Comprar Agora</a>
+    <div id="botaoCompra" class="hidden">
+      <a href="https://pay.kiwify.com.br/61zfzdm" class="btn" target="_blank">Comprar Agora</a>
+    </div>
   </div>
 
   <footer>
